@@ -374,6 +374,21 @@ export default function ArabicTeacherLanding() {
           transform: scale(1.05);
           box-shadow: 0 0 0 1px rgba(255,255,255,0.12), 0 18px 50px rgba(20, 200, 176, 0.35);
         }
+        #pricing .pricing-btn {
+          transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, box-shadow 300ms ease,
+            transform 300ms ease, filter 300ms ease;
+        }
+        #pricing .pricing-btn:hover {
+          background-color: #ffd700 !important;
+          background-image: none !important;
+          color: #000000 !important;
+          border-color: #ffd700 !important;
+          box-shadow: none !important;
+          transform: none;
+        }
+        #pricing .pricing-btn:hover * {
+          color: #000000 !important;
+        }
         .card-hover {
           transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
@@ -475,12 +490,13 @@ export default function ArabicTeacherLanding() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a
-              href="#cta"
-              className="btn-glow hidden min-h-[44px] items-center justify-center rounded-full bg-gradient-to-r from-amber-300 via-teal-300 to-teal-400 px-5 text-sm font-extrabold text-[#081018] shadow-lg sm:inline-flex"
+            <button
+              type="button"
+              className="btn-glow hidden min-h-[44px] cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-amber-300 via-teal-300 to-teal-400 px-5 text-sm font-extrabold text-[#081018] shadow-lg sm:inline-flex"
+              onClick={() => window.open('https://wa.me/996550662755', '_blank')}
             >
               Записаться
-            </a>
+            </button>
             <button
               type="button"
               className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/90 transition hover:bg-white/10 lg:hidden"
@@ -516,13 +532,16 @@ export default function ArabicTeacherLanding() {
                 {l.label}
               </a>
             ))}
-            <a
-              href="#cta"
-              className="btn-glow mt-4 inline-flex min-h-[48px] items-center justify-center rounded-full bg-gradient-to-r from-amber-300 via-teal-300 to-teal-400 px-5 text-sm font-extrabold text-[#081018]"
-              onClick={() => setMenuOpen(false)}
+            <button
+              type="button"
+              className="btn-glow mt-4 inline-flex min-h-[48px] w-full cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-amber-300 via-teal-300 to-teal-400 px-5 text-sm font-extrabold text-[#081018]"
+              onClick={() => {
+                setMenuOpen(false)
+                window.open('https://wa.me/996550662755', '_blank')
+              }}
             >
               Записаться
-            </a>
+            </button>
           </div>
         </div>
       </header>
@@ -563,13 +582,14 @@ export default function ArabicTeacherLanding() {
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center hero-anim hero-anim-4">
-              <a
-                href="#cta"
-                className="btn-glow inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-300 via-teal-300 to-teal-400 px-7 text-sm font-extrabold text-[#081018] shadow-xl"
+              <button
+                type="button"
+                className="btn-glow inline-flex min-h-[48px] cursor-pointer items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-300 via-teal-300 to-teal-400 px-7 text-sm font-extrabold text-[#081018] shadow-xl"
+                onClick={() => window.open('https://wa.me/996550662755', '_blank')}
               >
                 Согласовать время
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </button>
               <a
                 href="#process"
                 className="btn-ghost inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-7 text-sm font-extrabold text-white/90 backdrop-blur-md hover:border-white/25 hover:bg-white/10"
@@ -856,7 +876,7 @@ export default function ArabicTeacherLanding() {
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 p-1.5 backdrop-blur-xl">
                 <button
                   type="button"
-                  className={`min-h-[44px] rounded-full px-5 text-sm font-extrabold transition ${
+                  className={`pricing-btn min-h-[44px] cursor-pointer rounded-full px-5 text-sm font-extrabold transition ${
                     !billingYearly ? 'bg-gradient-to-r from-amber-300/90 to-teal-300/90 text-[#081018]' : 'text-white/65'
                   }`}
                   onClick={() => setBillingYearly(false)}
@@ -865,7 +885,7 @@ export default function ArabicTeacherLanding() {
                 </button>
                 <button
                   type="button"
-                  className={`min-h-[44px] rounded-full px-5 text-sm font-extrabold transition ${
+                  className={`pricing-btn min-h-[44px] cursor-pointer rounded-full px-5 text-sm font-extrabold transition ${
                     billingYearly ? 'bg-gradient-to-r from-amber-300/90 to-teal-300/90 text-[#081018]' : 'text-white/65'
                   }`}
                   onClick={() => setBillingYearly(true)}
@@ -876,7 +896,7 @@ export default function ArabicTeacherLanding() {
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 p-1.5 backdrop-blur-xl">
                 <button
                   type="button"
-                  className={`min-h-[44px] rounded-full px-5 text-sm font-extrabold transition ${
+                  className={`pricing-btn min-h-[44px] cursor-pointer rounded-full px-5 text-sm font-extrabold transition ${
                     currencyRub ? 'bg-gradient-to-r from-amber-300/90 to-teal-300/90 text-[#081018]' : 'text-white/65'
                   }`}
                   onClick={() => setCurrencyRub(true)}
@@ -885,7 +905,7 @@ export default function ArabicTeacherLanding() {
                 </button>
                 <button
                   type="button"
-                  className={`min-h-[44px] rounded-full px-5 text-sm font-extrabold transition ${
+                  className={`pricing-btn min-h-[44px] cursor-pointer rounded-full px-5 text-sm font-extrabold transition ${
                     !currencyRub ? 'bg-gradient-to-r from-amber-300/90 to-teal-300/90 text-[#081018]' : 'text-white/65'
                   }`}
                   onClick={() => setCurrencyRub(false)}
@@ -940,7 +960,7 @@ export default function ArabicTeacherLanding() {
                   </ul>
                   <a
                     href="#cta"
-                    className={`btn-glow mt-8 inline-flex min-h-[48px] w-full items-center justify-center rounded-full text-sm font-extrabold ${
+                    className={`pricing-btn btn-glow mt-8 inline-flex min-h-[48px] w-full cursor-pointer items-center justify-center rounded-full text-sm font-extrabold ${
                       plan.popular
                         ? 'bg-gradient-to-r from-amber-300 via-teal-300 to-teal-400 text-[#081018]'
                         : 'border border-white/15 bg-white/5 text-white hover:bg-white/10'
